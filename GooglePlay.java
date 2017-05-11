@@ -38,7 +38,7 @@ public class GooglePlay
     public int getNumeroUsuarios(){
         return listaUsuarios.size();
     }
-    
+
     /**
      * Metodo que Añade un nuevo usuario al arraylist listaUsuarios.
      * 
@@ -46,7 +46,7 @@ public class GooglePlay
      */
     public void addProducto(Producto producto)
     {
-    listaAplicaciones.add(producto);
+        listaAplicaciones.add(producto);
     }
 
     /**
@@ -57,11 +57,44 @@ public class GooglePlay
     public int getNumeroProductos(){
         return listaAplicaciones.size();
     }
+
+    /**
+     * Metodo que permite comprar un producto de la tienda GooglePlay.
+     * 
+     * @param cuenta String correo que firma la compra.
+     * @param app String que identifica la aplicacion a comprar.
+     * 
+     * @return Error(-1) si no localiza la app o la cuenta y el precio de la compra si
+     *           puede realizar la compra correctamente.
+     */
+    public double comprar(String cuenta, String app) {
+        double totalCompra = -1;
+        int contExt = 0;
+        boolean usuLocalizado = false;
+        int contInt = 0;
+        boolean appLocalizada = false;
+
+        while (contExt < listaUsuarios.size()) {
+            if (cuenta.equals(listaUsuarios.get(contExt).getNombreCuenta()) 
+                    && !usuLocalizado) {
+                usuLocalizado = true;
+                while (contInt < listaAplicaciones.size()) {
+                    if (app.equals(listaAplicaciones.get(contInt).getDenominacion()) 
+                            && !appLocalizada) {
+                        appLocalizada = true;
+                        listaUsuarios.get(contExt).addProductoComprado(listaAplicaciones.get(contInt));
+                        
+                    }
+                    contInt++;
+                }
+            }
+
+            contExt++;
+        }
+
+        return totalCompra;
+    }
 }
-
-
-
-
 
 
 

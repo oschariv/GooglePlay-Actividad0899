@@ -38,4 +38,5 @@ public abstract class ProductoMultimedia extends Producto
     {
         return ano;
     }
+    public abstract double calcularPrecio();
 }

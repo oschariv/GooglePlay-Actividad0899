@@ -40,4 +40,8 @@ public class Libro extends ProductoMultimedia
     {
         return ficcion;
     }
+    
+    public double calcularPrecio(){
+        return 0;
+    }
 }

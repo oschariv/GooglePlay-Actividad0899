@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Usuario here.
  * 
@@ -9,6 +9,7 @@ public class Usuario
 {
     // instance variables - replace the example below with your own
     private String correoElectronico;
+    private ArrayList<Producto> listaAplicacionesCompradas;
 
     /**
      * Constructor for objects of class Usuario
@@ -18,6 +19,7 @@ public class Usuario
     public Usuario(String correoElectronico)
     {
         this.correoElectronico = correoElectronico;
+        listaAplicacionesCompradas = new ArrayList<Producto>();
     }
 
     /**
@@ -28,5 +30,14 @@ public class Usuario
     public String getNombreCuenta()
     {
         return correoElectronico;
+    }
+    
+    /**
+     * Metodo que añade un Producto compradado.
+     * 
+     * @param producto Producto que compra el usuario
+     */
+    public void addProductoComprado(Producto producto){
+        listaAplicacionesCompradas.add(producto);
     }
 }

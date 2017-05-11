@@ -1,4 +1,4 @@
-
+    
 /**
  * Write a description of class Pelicula here.
  * 
@@ -42,5 +42,8 @@ public class Pelicula extends ProductoMultimedia
             cadenaADevolver = "FullHD";
         }
         return cadenaADevolver;
+    }
+    public double calcularPrecio(){
+        return 0;
     }
 }

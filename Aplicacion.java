@@ -41,12 +41,16 @@ public class Aplicacion extends Producto
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Metodo que devuelve el nombre de la aplicacion.
      * 
-     * @return     the sum of x and y 
+     * @return     String con el nombre. 
      */
     public String getNombre()
     {
         return super.getDenominacion();
+    }
+    
+    public double calcularPrecio(){
+        return 0;
     }
 }
